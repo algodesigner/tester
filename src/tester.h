@@ -85,8 +85,9 @@ void tester_new_group(tester *obj, const char *name);
  * @param exp_str the string value of the assertion expression.
  * @param file the name of the source file from which this method is called.
  * @param line the line number of this assertion call in the source file.
+ * @return the boolean value of the assertion.
  */
-void tester_test(tester *obj, bool exp, const char *name, const char *exp_str,
+bool tester_test(tester *obj, bool exp, const char *name, const char *exp_str,
         const char *file, int line);
 
 /**

@@ -77,7 +77,7 @@ void tester_new_group(tester *obj, const char *name)
     }
 }
 
-void tester_test(tester *obj, bool exp, const char *name, const char *exp_str,
+bool tester_test(tester *obj, bool exp, const char *name, const char *exp_str,
         const char *file, int line)
 {
     const char *result;
@@ -95,6 +95,7 @@ void tester_test(tester *obj, bool exp, const char *name, const char *exp_str,
             fprintf(obj->fp, "\tExpression: '%s', file %s, line %d\n", exp_str,
                     file, line);
     }
+    return exp;
 }
 
 bool tester_result(tester *obj)
@@ -110,7 +111,8 @@ void tester_destroy(tester *obj)
 }
 
 /* Prints test results only once */
-static void fprint_results(tester *obj) {
+static void fprint_results(tester *obj)
+{
     FILE *fp = obj->fp;
     if (fp && !obj->reported_results) {
         fprint_hline(fp, 80);
