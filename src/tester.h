@@ -37,6 +37,7 @@
 #ifndef TESTER_H_
 #define TESTER_H_
 
+#include <stdio.h>
 #include <stdbool.h>
 
 typedef struct tester_s tester;
