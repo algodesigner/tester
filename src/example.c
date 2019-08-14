@@ -64,7 +64,7 @@ static void test_assertions(tester *tst)
     tester_assert(tst, true, NULL);
 
     tester_assert(tst, !!true, "!!true == true");
-    tester_assert(tst, !0 == 1, "!0 == 1");
+    tester_assert(tst, (!0) == 1, "(!0) == 1");
     tester_assert(tst, 0 ^ 1, "0 ^ 1 == 1");
 
     /* Test a negative assertion and evaluate t result */
