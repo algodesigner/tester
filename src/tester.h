@@ -74,7 +74,7 @@ void tester_new_group(tester *obj, const char *name);
  * @param name the name of this test assertion; can be NULL.
  */
 #define tester_assert(obj, exp, name) \
-        tester_test(obj, exp, name, #exp, __FILE__, __LINE__);
+        do { tester_test(obj, exp, name, #exp, __FILE__, __LINE__); } while(0)
 
 /**
  * Tests the specified expression. This method is expected to be used in test
